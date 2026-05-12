@@ -51,9 +51,11 @@ export default function Nav({ phone }) {
   }, []);
 
   const handleNav = (id) => {
-    scrollTo(id);
-    setActiveSection(id);
     setMenuOpen(false);
+    setTimeout(() => {
+      scrollTo(id);
+      setActiveSection(id);
+    }, 150);
   };
 
   return (
