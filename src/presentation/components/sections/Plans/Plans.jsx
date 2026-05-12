@@ -42,7 +42,7 @@ export default function Plans({ plans }) {
                     className={[styles.popularBadge, 'bc'].join(' ')}
                     style={{ background: NEON, color: '#000' }}
                   >
-                    ⚡ Más popular
+                    Más popular
                   </div>
                 )}
 
