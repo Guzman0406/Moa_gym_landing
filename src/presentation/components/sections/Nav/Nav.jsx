@@ -113,13 +113,8 @@ export default function Nav({ phone }) {
             ))}
           </nav>
 
-          {/* Teléfono + CTA desktop */}
+          {/* CTA desktop */}
           <div className={styles.right}>
-            {phone && (
-              <a href={`tel:${phone.replace(/\s/g, '')}`} className={styles.phone}>
-                {phone}
-              </a>
-            )}
             <button
               onClick={() => handleNav('planes')}
               className={[styles.cta, 'bc'].join(' ')}

@@ -87,6 +87,15 @@
 }
 .phone:hover { color: rgba(255,255,255,0.9); }
 
+.igLink {
+  display:     flex;
+  align-items: center;
+  color:       rgba(255,255,255,0.5);
+  transition:  color 0.2s, transform 0.2s;
+}
+.igLink:hover { color: var(--neon, #39ff14); transform: scale(1.15); }
+
+
 .cta {
   padding:        0.5rem 1.25rem;
   border-radius:  6px;

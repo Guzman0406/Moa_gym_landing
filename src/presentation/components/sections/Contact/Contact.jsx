@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone, Facebook, MapPin, Clock, ArrowRight, Star } from 'lucide-react';
+import { MessageCircle, Phone, Facebook, Instagram, MapPin, Clock, ArrowRight, Star } from 'lucide-react';
 import FadeIn from '@presentation/components/ui/FadeIn';
 import SectionHeading from '@presentation/components/ui/SectionHeading';
 import { NEON } from '@presentation/constants';
@@ -31,8 +31,8 @@ export default function Contact({ gym }) {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.cardPrimary}
-              style={{ background: '#111', border: `1px solid ${NEON}40`, boxShadow: `0 0 30px ${NEON}15` }}
-              whileHover={{ y: -6, boxShadow: `0 16px 50px ${NEON}30` }}
+              style={{ background: '#111', border: '1px solid rgba(255,255,255,0.08)' }}
+              whileHover={{ y: -6, boxShadow: `0 16px 50px ${NEON}40`, borderColor: `${NEON}60` }}
             >
               <div className={styles.cardIcon} style={{ background: NEON }}>
                 <MessageCircle size={26} color="#000" />
@@ -51,7 +51,7 @@ export default function Contact({ gym }) {
               href={`tel:${gym.phone.replace(/\s/g, '')}`}
               className={styles.cardSecondary}
               style={{ background: '#0D0D0D', border: '1px solid rgba(255,255,255,0.08)' }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -6, boxShadow: `0 16px 50px ${NEON}40`, borderColor: `${NEON}60` }}
             >
               <div className={styles.cardIcon} style={{ background: 'rgba(255,255,255,0.07)' }}>
                 <Phone size={26} style={{ color: NEON }} />
@@ -70,7 +70,7 @@ export default function Contact({ gym }) {
               rel="noopener noreferrer"
               className={styles.cardSecondary}
               style={{ background: '#0D0D0D', border: '1px solid rgba(255,255,255,0.08)' }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -6, boxShadow: `0 16px 50px ${NEON}40`, borderColor: `${NEON}60` }}
             >
               <div className={styles.cardIcon} style={{ background: 'rgba(255,255,255,0.07)' }}>
                 <Facebook size={26} style={{ color: NEON }} />
@@ -78,6 +78,25 @@ export default function Contact({ gym }) {
               <span className={styles.cardLabel}>Facebook</span>
               <p className={[styles.cardValue, 'bc'].join(' ')}>Moa Gym</p>
               <span className={styles.cardHint}>Seguir página</span>
+            </motion.a>
+          </FadeIn>
+
+          {/* Instagram */}
+          <FadeIn delay={0.3}>
+            <motion.a
+              href="https://www.instagram.com/moagym/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cardSecondary}
+              style={{ background: '#0D0D0D', border: '1px solid rgba(255,255,255,0.08)' }}
+              whileHover={{ y: -6, boxShadow: `0 16px 50px ${NEON}40`, borderColor: `${NEON}60` }}
+            >
+              <div className={styles.cardIcon} style={{ background: 'rgba(255,255,255,0.07)' }}>
+                <Instagram size={26} style={{ color: NEON }} />
+              </div>
+              <span className={styles.cardLabel}>Instagram</span>
+              <p className={[styles.cardValue, 'bc'].join(' ')}>@moagym</p>
+              <span className={styles.cardHint}>Seguir perfil</span>
             </motion.a>
           </FadeIn>
         </div>
