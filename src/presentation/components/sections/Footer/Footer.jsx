@@ -25,9 +25,9 @@ export default function Footer({ gym }) {
               <Image
                 src="/images/logo.png"
                 alt="Moa Gym"
-                width={96}
-                height={42}
-                style={{ objectFit: 'contain', objectPosition: 'left center' }}
+                width={120}
+                height={48}
+                style={{ objectFit: 'contain', objectPosition: 'left center', transform: 'scale(3.5) translateY(3px)', transformOrigin: 'left center' }}
               />
             </div>
             <p className={styles.brandDesc}>

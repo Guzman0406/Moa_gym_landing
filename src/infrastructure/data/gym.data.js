@@ -25,7 +25,6 @@ export const GYM_DATA = {
     { d: 'Jueves',    h: '06:00 – 22:00' },
     { d: 'Viernes',   h: '06:00 – 22:00' },
     { d: 'Sábado',    h: '07:00 – 21:00' },
-    { d: 'Domingo',   h: '07:00 – 14:00' },
   ],
   mapEmbedUrl:  'https://maps.google.com/maps?q=Calz.+Ignacio+Zaragoza+1830,+Hidalgo,+Tuxtla+Gutierrez,+Chiapas,+Mexico&output=embed&z=16',
   mapsLink:     'https://maps.google.com/?q=Calz.+Ignacio+Zaragoza+1830,+Hidalgo,+Tuxtla+Gutierrez,+Chiapas',

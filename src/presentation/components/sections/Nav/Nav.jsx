@@ -85,9 +85,9 @@ export default function Nav({ phone }) {
             <Image
               src="/images/logo.png"
               alt="Moa Gym"
-              width={110}
-              height={48}
-              style={{ objectFit: 'contain', objectPosition: 'left center' }}
+              width={160}
+              height={52}
+              style={{ objectFit: 'contain', objectPosition: 'left center', transform: 'scale(3.5) translateY(3px)', transformOrigin: 'left center' }}
               priority
             />
           </button>

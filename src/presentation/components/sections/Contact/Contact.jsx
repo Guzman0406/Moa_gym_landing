@@ -39,9 +39,7 @@ export default function Contact({ gym }) {
               </div>
               <span className={styles.cardLabel}>WhatsApp</span>
               <p className={[styles.cardValue, 'bc'].join(' ')}>{gym.phone}</p>
-              <span className={styles.cardCta} style={{ background: `${NEON}20`, color: NEON }}>
-                Escríbenos →
-              </span>
+              <span className={styles.cardHint}>Escríbenos →</span>
             </motion.a>
           </FadeIn>
 
@@ -126,54 +124,64 @@ export default function Contact({ gym }) {
             </div>
           </FadeIn>
 
-          {/* Dirección + Rating */}
+          {/* Mapa + Rating integrado */}
           <div className={styles.rightCol}>
             <FadeIn delay={0.1}>
               <div className={styles.infoCard}
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <div className={styles.infoHeader}>
-                  <div className={styles.infoIcon} style={{ background: `${NEON}20` }}>
-                    <MapPin size={18} style={{ color: NEON }} />
-                  </div>
-                  <h3 className={[styles.infoTitle, 'bc'].join(' ')}>DIRECCIÓN</h3>
-                </div>
-                <p className={styles.address}>{gym.address}<br />{gym.cityState}</p>
-                <a
-                  href={gym.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={[styles.mapsLink, 'bc'].join(' ')}
-                  style={{ color: NEON }}
-                >
-                  Abrir en Google Maps <ArrowRight size={14} />
-                </a>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className={styles.ratingCard}
-                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <div>
-                  <div className={styles.ratingRow}>
-                    <span className={[styles.ratingNum, 'bc'].join(' ')} style={{ color: NEON }}>
-                      {gym.rating}
-                    </span>
-                    <div className={styles.ratingStars}>
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={NEON} stroke="none" />
-                      ))}
+                style={{ background: '#111', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', padding: 0, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                {/* Header */}
+                <div style={{ padding: '1.25rem 1.5rem 0.75rem' }}>
+                  <div className={styles.infoHeader} style={{ marginBottom: '0.25rem' }}>
+                    <div className={styles.infoIcon} style={{ background: `${NEON}20` }}>
+                      <MapPin size={18} style={{ color: NEON }} />
                     </div>
+                    <h3 className={[styles.infoTitle, 'bc'].join(' ')}>UBICACIÓN</h3>
                   </div>
-                  <p className={styles.ratingLabel}>Calificación en Google Maps</p>
+                  <p className={styles.address} style={{ margin: '0 0 0.75rem' }}>
+                    {gym.address}<br />{gym.cityState}
+                  </p>
                 </div>
-                <div className={styles.ratingRight}>
-                  <p className={[styles.ratingCount, 'bc'].join(' ')}>{gym.reviewCount}+</p>
-                  <p className={styles.ratingLabel}>reseñas verificadas</p>
+                {/* Mapa */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.3763723436423!2d-93.09965389999999!3d16.7579402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd9004115ae23%3A0xc05e83511edd533e!2sMoa!5e0!3m2!1ses-419!2smx!4v1778564703087!5m2!1ses-419!2smx"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, display: 'block', filter: 'grayscale(20%) contrast(1.05)', flexShrink: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Moa Gym"
+                />
+                {/* Rating strip */}
+                <div style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  padding: '1rem 1.5rem',
+                  borderTop: '1px solid rgba(255,255,255,0.06)',
+                  marginTop: 'auto',
+                }}>
+                  <div>
+                    <div className={styles.ratingRow}>
+                      <span className={[styles.ratingNum, 'bc'].join(' ')} style={{ color: NEON, fontSize: '1.8rem' }}>
+                        {gym.rating}
+                      </span>
+                      <div className={styles.ratingStars}>
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={13} fill={NEON} stroke="none" />
+                        ))}
+                      </div>
+                    </div>
+                    <p className={styles.ratingLabel}>Calificación en Google Maps</p>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <p className={[styles.ratingCount, 'bc'].join(' ')} style={{ fontSize: '1.4rem', margin: '0 0 0.15rem' }}>{gym.reviewCount}+</p>
+                    <p className={styles.ratingLabel}>reseñas verificadas</p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
           </div>
         </div>
+
 
         {/* ── CTA Banner final ─────────────────────────────────── */}
         <FadeIn delay={0.3}>

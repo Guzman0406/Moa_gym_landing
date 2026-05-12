@@ -24,6 +24,8 @@
   gap:            0.5rem;
   cursor:         pointer;
   transition:     box-shadow 0.3s;
+  height:         100%;
+  box-sizing:     border-box;
 }
 
 .cardIcon {
@@ -64,8 +66,10 @@
 }
 
 .cardHint {
-  font-size: 0.75rem;
-  color:     rgba(255,255,255,0.25);
+  font-size:   0.75rem;
+  font-weight: 600;
+  color:       var(--neon, #39ff14);
+  letter-spacing: 0.04em;
 }
 
 /* Info grid */
@@ -74,12 +78,23 @@
   grid-template-columns: 1fr 1fr;
   gap:                   1.25rem;
   margin-bottom:         2rem;
+  align-items:           stretch;
 }
 
 .rightCol {
   display:        flex;
   flex-direction: column;
-  gap:            1.25rem;
+  height:         100%;
+}
+
+.rightCol > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightCol > * > div {
+  height: 100%;
 }
 
 .infoCard {
