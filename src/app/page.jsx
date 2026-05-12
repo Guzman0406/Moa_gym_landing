@@ -24,13 +24,13 @@ import { GYM_IMG, WORKOUT_IMG } from '@presentation/constants';
  * Si la carpeta está vacía o no existe, usa las imágenes de Unsplash.
  */
 function getGymPhotos() {
-  const dir = path.join(process.cwd(), 'public', 'images', 'gym');
+  const dir = path.join(process.cwd(), 'public', 'images', 'carousel');
   try {
     const photos = fs
       .readdirSync(dir)
       .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
       .sort()
-      .map((f) => `/images/gym/${f}`);
+      .map((f) => `/images/carousel/${f}`);
     if (photos.length > 0) return photos;
   } catch {
     /* carpeta aún no existe — usar placeholders */

@@ -41,6 +41,13 @@
   align-items:  center;
 }
 
+.logoImg {
+  object-fit:       contain;
+  object-position:  left center;
+  transform:        scale(3.5) translateY(3px);
+  transform-origin: left center;
+}
+
 /* Desktop links */
 .links {
   display:     flex;
@@ -162,4 +169,10 @@
   .links  { display: none; }
   .right  { display: none; }
   .burger { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .logoImg {
+    transform: scale(2.0) translateY(1px);
+  }
 }

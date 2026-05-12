@@ -87,7 +87,7 @@ export default function Nav({ phone }) {
               alt="Moa Gym"
               width={160}
               height={52}
-              style={{ objectFit: 'contain', objectPosition: 'left center', transform: 'scale(3.5) translateY(3px)', transformOrigin: 'left center' }}
+              className={styles.logoImg}
               priority
             />
           </button>

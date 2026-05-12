@@ -44,17 +44,6 @@ export default function Hero({ gym }) {
       <div className={styles.inner}>
         <div className={styles.content}>
 
-          {/* Pill de ubicación */}
-          <motion.div {...fadeUp(0.1)}>
-            <span
-              className={styles.pill}
-              style={{ borderColor: `${NEON}60`, color: NEON, background: `${NEON}10` }}
-            >
-              <Flame size={12} />
-              Tuxtla Gutiérrez, Chiapas
-            </span>
-          </motion.div>
-
           {/* Heading masivo — Barlow Condensed 900 */}
           <motion.h1 {...fadeUp(0.2)} className={[styles.heading, 'bc'].join(' ')}>
             IMPOSSIBLE<br />

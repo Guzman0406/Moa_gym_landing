@@ -27,7 +27,7 @@ export default function Footer({ gym }) {
                 alt="Moa Gym"
                 width={120}
                 height={48}
-                style={{ objectFit: 'contain', objectPosition: 'left center', transform: 'scale(3.5) translateY(3px)', transformOrigin: 'left center' }}
+                className={styles.logoImg}
               />
             </div>
             <p className={styles.brandDesc}>
