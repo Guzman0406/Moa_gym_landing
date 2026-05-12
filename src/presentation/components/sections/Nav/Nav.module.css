@@ -126,6 +126,10 @@
   cursor:     pointer;
   color:      #fff;
   flex-shrink: 0;
+  position:   relative;
+  z-index:    50;
+  background: transparent;
+  border:     none;
 }
 
 /* Mobile drawer */

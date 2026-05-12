@@ -169,3 +169,12 @@
     gap:                   2.5rem;
   }
 }
+
+@media (max-width: 600px) {
+  .addressCard {
+    display: none;
+  }
+  .dots {
+    bottom: 1.5rem;
+  }
+}

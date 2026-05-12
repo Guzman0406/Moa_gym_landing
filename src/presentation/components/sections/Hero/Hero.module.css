@@ -71,15 +71,16 @@
   margin-bottom:  1.5rem;
 }
 
-/* Heading Barlow Condensed 900 — igual a la referencia */
 .heading {
-  font-size:      clamp(4.5rem, 13vw, 13rem);
+  font-size:      clamp(3.3rem, 13vw, 13rem);
   line-height:    0.90;
   font-weight:    900;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   color:          #fff;
   margin:         0 0 1.75rem;
+  word-wrap:      break-word;
+  overflow-wrap:  break-word;
 }
 
 .accent {
