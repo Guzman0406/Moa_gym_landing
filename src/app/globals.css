@@ -1,0 +1,67 @@
+/* ================================================================
+   globals.css — design tokens, reset, utilidades
+   ================================================================ */
+
+:root {
+  /* Neon verde — color del logo Moa Gym */
+  --neon:       #00E600;
+  --neon-dim:   rgba(0,230,0,0.15);
+  --neon-glow:  rgba(0,230,0,0.35);
+
+  /* Negros para fondos de secciones */
+  --bg-0:  #000000;
+  --bg-1:  #0A0A0A;
+  --bg-2:  #111111;
+  --bg-3:  #0D0D0D;
+
+  /* Texto */
+  --text:         rgba(255,255,255,0.95);
+  --text-muted:   rgba(255,255,255,0.45);
+  --text-dimmer:  rgba(255,255,255,0.25);
+
+  /* Bordes */
+  --border:       rgba(255,255,255,0.08);
+  --border-neon:  rgba(0,230,0,0.35);
+
+  /* Tipografías */
+  --font-anton:  var(--font-anton);
+  --font-bc:     var(--font-bc);
+  --font-barlow: var(--font-barlow);
+}
+
+/* ── Reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:             var(--bg-0);
+  color:                  var(--text);
+  font-family:            var(--font-barlow), system-ui, sans-serif;
+  font-weight:            400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering:         optimizeLegibility;
+  overflow-x:             hidden;
+}
+
+a       { color: inherit; text-decoration: none; }
+button  { font-family: inherit; cursor: pointer; border: none; background: none; }
+img     { max-width: 100%; display: block; }
+
+::selection { background: var(--neon); color: #000; }
+
+/* ── Clases tipográficas ─────────────────────────────────────────── */
+.anton { font-family: var(--font-anton), system-ui, sans-serif; letter-spacing: -0.02em; }
+.bc    { font-family: var(--font-bc),    system-ui, sans-serif; }
+
+/* ── Animaciones ─────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1);    }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}

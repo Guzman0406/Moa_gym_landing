@@ -1,0 +1,156 @@
+/* ── Barra de progreso ───────────────────────────────────────────── */
+.progress {
+  position:     fixed;
+  top:          0;
+  left:         0;
+  right:        0;
+  height:       3px;
+  z-index:      200;
+  transform-origin: left;
+}
+
+/* ── Nav container ───────────────────────────────────────────────── */
+.nav {
+  position:   fixed;
+  top:        3px; /* debajo de la barra de progreso */
+  left:       0;
+  right:      0;
+  z-index:    100;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.inner {
+  max-width:   1280px;
+  margin:      0 auto;
+  padding:     0 1.5rem;
+  height:      68px;
+  display:     flex;
+  align-items: center;
+  gap:         1.5rem;
+}
+
+/* Logo */
+.logo {
+  flex-shrink:  0;
+  margin-right: auto;
+  cursor:       pointer;
+  background:   none;
+  border:       none;
+  padding:      0;
+  display:      flex;
+  align-items:  center;
+}
+
+/* Desktop links */
+.links {
+  display:     flex;
+  align-items: center;
+  gap:         0.25rem;
+}
+
+.link {
+  position:       relative;
+  padding:        0.4rem 1rem;
+  border-radius:  6px;
+  font-family:    var(--font-bc), sans-serif;
+  font-size:      0.82rem;
+  font-weight:    600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor:         pointer;
+  background:     none;
+  border:         none;
+  transition:     color 0.2s;
+  white-space:    nowrap;
+}
+
+.linkBg {
+  position:      absolute;
+  inset:         0;
+  border-radius: 6px;
+}
+
+/* Right: phone + CTA */
+.right {
+  display:     flex;
+  align-items: center;
+  gap:         1rem;
+  flex-shrink: 0;
+}
+
+.phone {
+  font-size:      0.78rem;
+  font-weight:    500;
+  color:          rgba(255,255,255,0.5);
+  white-space:    nowrap;
+  letter-spacing: 0.04em;
+}
+.phone:hover { color: rgba(255,255,255,0.9); }
+
+.cta {
+  padding:        0.5rem 1.25rem;
+  border-radius:  6px;
+  font-size:      0.78rem;
+  font-weight:    800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor:         pointer;
+  transition:     opacity 0.2s, transform 0.15s;
+  white-space:    nowrap;
+}
+.cta:hover { opacity: 0.85; transform: scale(1.04); }
+
+/* Burger */
+.burger {
+  display:    none;
+  align-items: center;
+  justify-content: center;
+  width:      40px;
+  height:     40px;
+  cursor:     pointer;
+  color:      #fff;
+  flex-shrink: 0;
+}
+
+/* Mobile drawer */
+.drawer   { overflow: hidden; }
+
+.drawerInner {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap:     0.25rem;
+}
+
+.drawerLink {
+  display:        block;
+  width:          100%;
+  text-align:     left;
+  padding:        0.8rem 1rem;
+  border-radius:  8px;
+  font-size:      1rem;
+  font-weight:    700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor:         pointer;
+  transition:     color 0.2s, background 0.2s;
+}
+
+.drawerCta {
+  margin-top:     0.75rem;
+  padding:        0.9rem;
+  border-radius:  8px;
+  font-size:      0.95rem;
+  font-weight:    800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor:         pointer;
+  width:          100%;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .links  { display: none; }
+  .right  { display: none; }
+  .burger { display: flex; }
+}

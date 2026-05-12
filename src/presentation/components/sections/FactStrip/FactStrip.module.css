@@ -1,0 +1,99 @@
+/* ════════════════════════════════════════════════════════════════
+   FactStrip — fondo amarillo neón, números animados
+   ════════════════════════════════════════════════════════════════ */
+
+.strip {
+  background: #C6FF00;   /* neón lima — igual al de la referencia */
+  padding:    0;
+}
+
+.inner {
+  max-width:             1200px;
+  margin:                0 auto;
+  padding:               0 1.5rem;
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Stat individual ─────────────────────────────────────────────── */
+.stat {
+  position:        relative;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  gap:             0.35rem;
+  padding:         1.35rem 1rem;
+  text-align:      center;
+  color:           #0a0a0a;
+}
+
+/* Separador vertical entre stats */
+.stat:not(:last-child)::after {
+  content:    '';
+  position:   absolute;
+  right:      0;
+  top:        20%;
+  height:     60%;
+  width:      1px;
+  background: oklch(0.09 0.01 145 / 0.18);
+}
+
+/* Ícono */
+.icon {
+  display:    flex;
+  align-items: center;
+  justify-content: center;
+  opacity:    0.75;
+  color:      #0a0a0a;
+  margin-bottom: 0.15rem;
+}
+
+/* Número grande */
+.value {
+  font-size:   clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  color:       #0a0a0a;
+  letter-spacing: -0.02em;
+  display:     flex;
+  align-items: baseline;
+  gap:         0.05em;
+}
+
+.suffix {
+  font-size:   0.75em;  /* relativo al .value */
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Etiqueta */
+.label {
+  font-size:      0.68rem;
+  font-weight:    700;
+  letter-spacing: 0.12em;
+  color:          #0a0a0a;
+  opacity:        0.7;
+  line-height:    1.3;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 780px) {
+  .inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(2)::after { display: none; }
+
+  /* Separador horizontal entre filas */
+  .stat:nth-child(1),
+  .stat:nth-child(2) {
+    border-bottom: 1px solid oklch(0.09 0.01 145 / 0.18);
+  }
+}
+
+@media (max-width: 420px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat { padding: 1rem 0.75rem; }
+}

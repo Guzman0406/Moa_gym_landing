@@ -1,0 +1,23 @@
+.badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            0.3rem;
+  padding:        0.2rem 0.65rem;
+  border-radius:  999px;
+  font-size:      0.72rem;
+  font-weight:    600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.green {
+  background: oklch(0.60 0.20 142 / 0.15);
+  color:      var(--green);
+  border:     1px solid oklch(0.60 0.20 142 / 0.30);
+}
+
+.dark {
+  background: var(--black-2);
+  color:      var(--text-on-dark);
+  border:     1px solid var(--line-dark);
+}

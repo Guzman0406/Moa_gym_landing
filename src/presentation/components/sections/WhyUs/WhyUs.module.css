@@ -1,0 +1,171 @@
+.inner {
+  max-width: 1280px;
+  margin:    0 auto;
+  padding:   0 1.5rem;
+}
+
+.grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   3rem;
+  align-items:           start;
+  margin-top:            0;
+}
+
+/* ── Carrusel ────────────────────────────────────────────────────── */
+.carouselWrap {
+  position:     relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow:      hidden;
+  background:    #111;
+}
+
+/* Cada slide ocupa todo el wrapper */
+.slide {
+  position: absolute;
+  inset:    0;
+}
+
+.imageOverlay {
+  position:   absolute;
+  inset:      0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+  z-index:    2;
+  pointer-events: none;
+}
+
+/* Botones prev / next */
+.navBtn {
+  position:        absolute;
+  top:             50%;
+  transform:       translateY(-50%);
+  z-index:         5;
+  width:           36px;
+  height:          36px;
+  border-radius:   50%;
+  background:      rgba(0,0,0,0.55);
+  border:          1px solid rgba(255,255,255,0.15);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  cursor:          pointer;
+  transition:      background 0.2s, border-color 0.2s;
+  padding:         0;
+}
+.navBtn:hover {
+  background:   rgba(0,0,0,0.85);
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* Dots */
+.dots {
+  position:    absolute;
+  bottom:      5rem; /* por encima del address card */
+  left:        50%;
+  transform:   translateX(-50%);
+  z-index:     5;
+  display:     flex;
+  align-items: center;
+  gap:         5px;
+}
+
+.dot {
+  height:        6px;
+  border-radius: 999px;
+  border:        none;
+  cursor:        pointer;
+  padding:       0;
+  transition:    width 0.3s, background 0.3s;
+}
+
+/* Tarjeta de dirección */
+.addressCard {
+  position:       absolute;
+  bottom:         1.5rem;
+  left:           1.5rem;
+  right:          1.5rem;
+  z-index:        2;
+  display:        flex;
+  align-items:    center;
+  gap:            0.75rem;
+  padding:        0.9rem 1rem;
+  border-radius:  10px;
+  backdrop-filter: blur(12px);
+}
+
+.addressIcon {
+  width:           40px;
+  height:          40px;
+  border-radius:   50%;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+.addressTitle {
+  font-size:   0.85rem;
+  font-weight: 600;
+  color:       rgba(255,255,255,0.9);
+  margin:      0 0 0.15rem;
+}
+
+.addressSub {
+  font-size: 0.75rem;
+  color:     rgba(255,255,255,0.45);
+  margin:    0;
+}
+
+/* Feature cards */
+.features {
+  display:        flex;
+  flex-direction: column;
+  gap:            0.9rem;
+}
+
+.feature {
+  display:       flex;
+  align-items:   flex-start;
+  gap:           1rem;
+  padding:       1.1rem 1.25rem;
+  border-radius: 12px;
+  cursor:        default;
+}
+
+.iconWrap {
+  width:           44px;
+  height:          44px;
+  border-radius:   10px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+  transition:      background 0.2s;
+}
+
+/* Override icon color on hover (Framer handles it via whileHover) */
+
+.featureTitle {
+  font-size:      1rem;
+  font-weight:    700;
+  letter-spacing: 0.03em;
+  color:          rgba(255,255,255,0.92);
+  margin:         0 0 0.3rem;
+  text-transform: uppercase;
+}
+
+.featureDesc {
+  font-size:   0.85rem;
+  line-height: 1.65;
+  color:       rgba(255,255,255,0.45);
+  margin:      0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap:                   2.5rem;
+  }
+}

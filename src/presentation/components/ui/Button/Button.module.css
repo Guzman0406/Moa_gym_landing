@@ -1,0 +1,59 @@
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.5rem;
+  padding:         0.75rem 1.75rem;
+  border-radius:   4px;
+  font-size:       0.875rem;
+  font-weight:     600;
+  letter-spacing:  0.06em;
+  text-transform:  uppercase;
+  transition:      background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor:          pointer;
+  text-decoration: none;
+  white-space:     nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+
+/* ── Variantes ──────────────────────────────────────────────────── */
+.primary {
+  background: var(--green);
+  color:      var(--text-on-green);
+  border:     2px solid var(--green);
+}
+.primary:hover {
+  background:  var(--green-dark);
+  border-color: var(--green-dark);
+  box-shadow:  0 4px 20px oklch(0.60 0.20 142 / 0.35);
+}
+
+.outline {
+  background:   transparent;
+  color:        var(--white);
+  border:       2px solid var(--white-3);
+}
+.outline:hover {
+  border-color: var(--green);
+  color:        var(--green);
+}
+
+.ghost {
+  background:   transparent;
+  color:        var(--black);
+  border:       2px solid var(--line-light);
+}
+.ghost:hover {
+  border-color: var(--green);
+  color:        var(--green);
+}
+
+.green {
+  background: transparent;
+  color:      var(--green);
+  border:     2px solid var(--green);
+}
+.green:hover {
+  background: var(--green);
+  color:      var(--text-on-green);
+}
